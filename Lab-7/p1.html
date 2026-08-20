@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7 Demo</title>
+    <style>
+
+        /* universal selector */
+        * {
+            margin: 10px; 
+        }
+        /* element selector  */
+        h1{
+            text-align: center;
+        }
+
+        /* group selector */
+        h1,b{
+            background-color: aqua;
+        }
+
+        /* id selector */
+        .abc{
+            background-color: red;
+        }
+        /* class selector */
+        .xyz{
+            background-color: yellow;
+        }
+        /* Adjacent Sibling */
+        div+strong{
+            background-color: blueviolet;
+        }
+
+        /* child selector */
+        ul>li{
+            background-color: aquamarine;
+        }
+
+        /* attribute selector */
+        input[type="text"]{
+            background-color: bisque;
+        }
+
+        /* Descendant selector */
+        div em{
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lab 7</h1>
+    <b>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias itaque vero quidem fuga architecto vel tempore exercitationem. Corporis unde error, magni repudiandae enim ducimus modi libero commodi, numquam iste doloremque!</b>
+
+    <h3 id="abc">Class and Id selector part</h3>
+    <div class="xyz">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero harum pariatur sint, quidem laudantium facere provident quisquam recusandae sequi officia dolor in velit voluptatum inventore necessitatibus! Harum cum excepturi provident?</div>
+    <div class="xyz">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum aspernatur veniam ad facere totam consequatur sapiente praesentium quis, nisi officiis error nulla deleniti culpa exercitationem perferendis veritatis quas magnam aliquam?</div>
+    <strong>Hello from strong</strong>
+    <p>Above strong get style below not because of adjacent sibling <br>
+        direct div after strong get style and other not
+    </p>
+    <strong>Hello from second strong</strong>
+    <ul>
+        <li>Hello from li</li>
+        <li>Hello from li</li>
+    </ul>
+
+    <form>
+        <input type="text" placeholder="Hello from tectbox">
+    </form>
+
+    <div>
+        <ol>
+            <li>Hello from li</li>
+            <li>Hello from li</li>
+            <li>Hello from li</li>
+            <ol>
+                <li><em>Hello from nested list of ol inside ol</em></li>
+                <li><em>Hello from nested list of ol inside ol</em></li>
+            </ol>
+        </ol>
+        <em>Hello from nested list of ul inside ol</em>
+    </div>
+    <i>Note adjacent sibling finds all em inside div for its styling</i>
+</body>
+
+</html>
