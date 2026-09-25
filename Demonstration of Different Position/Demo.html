@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>CSS Position Demonstration</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* =========================
+           STATIC
+        ========================= */
+
+        .static-box {
+            width: 200px;
+            height: 80px;
+
+            background-color: lightblue;
+
+            position: static;
+
+            margin: 20px;
+        }
+
+
+        /* =========================
+           RELATIVE
+        ========================= */
+
+        .relative-box {
+            width: 200px;
+            height: 80px;
+
+            background-color: lightgreen;
+
+            position: relative;
+
+            top: 20px;
+            left: 50px;
+
+            margin: 20px;
+        }
+
+
+        /* =========================
+           ABSOLUTE
+        ========================= */
+
+        .absolute-parent {
+            width: 500px;
+            height: 250px;
+
+            background-color: lightgray;
+
+            position: relative;
+
+            margin: 50px 20px;
+        }
+
+        .absolute-box {
+            width: 150px;
+            height: 80px;
+
+            background-color: orange;
+
+            position: absolute;
+
+            top: 20px;
+            right: 20px;
+        }
+
+
+        /* =========================
+           FIXED
+        ========================= */
+
+        .fixed-box {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            background-color: red;
+            color: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           STICKY
+        ========================= */
+
+        .sticky-box {
+            position: sticky;
+
+            top: 0;
+
+            padding: 20px;
+
+            background-color: purple;
+            color: white;
+
+            text-align: center;
+        }
+
+
+        /* Large content for scrolling */
+
+        .content {
+            height: 1500px;
+
+            background: linear-gradient(
+                white,
+                lightgray
+            );
+
+            padding: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>CSS Position Demonstration</h1>
+
+
+    <!-- STATIC -->
+
+    <h2>1. Static</h2>
+
+    <div class="static-box">
+        Static Box
+    </div>
+
+
+    <!-- RELATIVE -->
+
+    <h2>2. Relative</h2>
+
+    <div class="relative-box">
+        Relative Box
+    </div>
+
+
+    <!-- ABSOLUTE -->
+
+    <h2>3. Absolute</h2>
+
+    <div class="absolute-parent">
+
+        Parent
+
+        <div class="absolute-box">
+            Absolute Box
+        </div>
+
+    </div>
+
+
+    <!-- STICKY -->
+
+    <h2>4. Sticky</h2>
+
+    <div class="sticky-box">
+        Sticky Box
+    </div>
+
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+        <h2>Scroll the page</h2>
+
+        <p>
+            Observe the sticky and fixed elements.
+        </p>
+
+        <p>
+            The sticky element will stick to the top.
+        </p>
+
+        <p>
+            The fixed element will remain at the
+            bottom-right of the screen.
+        </p>
+
+    </div>
+
+
+    <!-- FIXED -->
+
+    <div class="fixed-box">
+        Fixed Box
+    </div>
+
+</body>
+
+</html>
