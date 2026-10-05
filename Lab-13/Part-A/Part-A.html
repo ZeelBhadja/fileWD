@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pseudo Classes and Elements</title>
+	<style type="text/css">
+		.link{
+			font-size: 18px;
+		}
+		a.link:link{
+			color: orange;
+		}
+		a.link:visited{
+			color: red;
+		}
+		a.link:hover{
+			color: green;
+		}
+		p.line:first-line{
+			color: blue;
+			font-size: 25px;
+		}
+		p.letter:first-letter{
+			color: red;
+			font-size: 50px;
+		}
+		p.selected::selection{
+			background-color: yellow;
+		}
+		.selected{
+			font-size: 25px;
+		}
+		.element{
+			font-size: 25px;
+		}
+		p.element:hover{
+			color: red;
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Pseudo Classes</h1>
+	<a href="https://www.darshanums.in/Login.aspx" class="link">Link for Darshan UMS</a>
+
+	<p class="line">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrin voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+	<p class="letter">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercodoonsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+	<p class="selected">Select this text</p>
+
+	<p class="element">Hover the mouse here</p>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form with Validation Feedback</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input:valid {
+      border-color: green;
+      background-color: #e8f8e8;
+    }
+
+    input:invalid {
+      border-color: red;
+      background-color: #fdd;
+    }
+
+    input:focus:invalid {
+      border-color: red;
+      background-color: #fdd;
+    }
+
+    input:focus:valid {
+      border-color: green;
+      background-color: #e8f8e8;
+    }
+    
+    form:invalid button {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    form:valid button {
+      background-color: #4CAF50;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1>Form with Validation Feedback</h1>
+  <form id="exampleForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email">
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required placeholder="Enter your password">
+    <br><br>
+
+    <label for="phone">Phone (optional):</label>
+    <input type="tel" id="phone" name="phone" placeholder="1234567890">
+    <br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

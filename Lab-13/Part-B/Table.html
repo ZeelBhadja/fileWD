@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Row Hover Example</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      text-align: left;
+    }
+
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    tr:hover {
+      background-color: #e1ffd5;  
+      cursor: pointer; 
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Hover to Highlight Table Rows</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>28</td>
+        <td>USA</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>34</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>Mark Johnson</td>
+        <td>41</td>
+        <td>Canada</td>
+      </tr>
+      <tr>
+        <td>Alice Brown</td>
+        <td>22</td>
+        <td>Australia</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
