@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 Part-B</title>
+    <style>
+        #darshan{
+            height: 60px;
+            padding: 10px;
+        }
+        nav{
+            float: right;
+            margin: 15px;
+        }
+        a{
+            margin-left: 15px;
+            text-decoration: none;
+        }
+        .left{
+            background-color: red;
+            float: left;
+            text-align: center;
+            width: 150px;
+            height: 400px;
+        }
+        .right{
+            float: left;
+            border: 1px dotted black;
+            width: 1095px;
+            height: 400px;
+        }
+        .element{
+            height: 50px;
+            border: 1px solid goldenrod;
+            margin-top: 5px;
+        }
+        img{
+            width: 80px;
+        }
+        .part1 {
+            padding: 10px;
+            height: 150px;
+        }
+        .part2{
+            padding: 10px;
+        }
+        .faculty{
+            margin-left: 15px;
+            float: left;
+        }
+        footer{
+            clear: both;
+
+            /* note:clear both is used to indicates which sides of an element's box(es) may not be adjacent to an earlier floating box. The 'clear' property does not consider floats inside the element itself or in other block formatting contexts.
+            mainly to exit float used above and starting from next line type,content not added between its spaces */
+            
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
+        .main{
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./images (1).jpeg" id="darshan" alt="Darshan Universy Logo">
+        <nav>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <a href="">Login</a>
+        </nav>
+    </header>
+    <hr>
+    <div class="main">
+        <div class="left">
+            <div>Sidebar</div>
+            <div class="element">Home</div>
+            <div class="element">Placement</div>
+            <div class="element">Recruitment</div>
+            <div class="element">Faculty</div>
+            <div class="element">News</div>
+        </div>
+        <div class="right">
+            <div class="part1">
+                <div class="faculty">
+                    <img src="./images (1).jpeg" alt=""><br>
+                    Dharmik Sir <br>BE,MTech(CSE)
+                </div>
+                <div class="faculty">
+                    <img src="./images (1).jpeg" alt=""><br>
+                    Dharmik Sir <br>BE,MTech(CSE)
+                </div>
+            </div>
+            <div class="part2">
+                <div class="faculty">
+                    <img src="./images (1).jpeg" alt=""><br>
+                    Dharmik Sir <br>BE,MTech(CSE)
+                </div>
+                <div class="faculty">
+                    <img src="./images (1).jpeg" alt=""><br>
+                    Dharmik Sir <br>BE,MTech(CSE)
+                </div>
+                <div class="faculty">
+                    <img src="./images (1).jpeg" alt=""><br>
+                    Dharmik Sir <br>BE,MTech(CSE)
+                </div>
+                <div class="faculty">
+                    <img src="./images (1).jpeg" alt=""><br>
+                    Dharmik Sir <br>BE,MTech(CSE)
+                </div>
+            </div>
+        </div>
+    </div>  
+    <footer>&copy;Darshan University - Rajkot</footer>
+</body>
+</html>

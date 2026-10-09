@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex box demo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column; 
+            background-color: yellow;
+        }
+
+        .entry {
+            background-color: aqua;
+            margin-top: 20px;
+        }
+
+        .horizontal{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .vertical{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            width: 50%;
+            margin-left: 25%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="horizontal">
+        <div class="entry">Entry-1</div>
+        <div class="entry">Entry-2</div>
+        <div class="entry">Entry-3</div>
+    </div>
+    <div class="vertical">
+        <div class="entry">Entry-1</div>
+        <div class="entry">Entry-2</div>
+        <div class="entry">Entry-3</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layout</title>
+    <style type="text/css">
+        .top {
+            background-color: black;
+            width: 100%;
+            height: 50px;
+            float: left;
+            margin-top: 5px;
+        }
+
+        .text {
+            text-align: left;
+            color: greenyellow;
+            font-size: 30px;
+            font-style: italic;
+            height: 415px;
+            width: 15%;
+            text-align: center;
+            padding-top: 200px;
+            float: left;
+        }
+
+        .main {
+            width: 100%;
+            height: 615px;
+            float: left;
+            text-align: center;
+            margin: auto;
+        }
+
+        .head {
+            color: white;
+            width: 70%;
+            height: 50px;
+            padding-top: 30px;
+            float: left;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .nav {
+            float: left;
+            background-color: blue;
+            color: white;
+            width: 15%;
+            height: 250px;
+            margin-right: 5px;
+            padding-top: 190px;
+        }
+
+        .content {
+            float: left;
+            width: 54.5%;
+            height: 440px;
+            background-color: yellow;
+            font-weight: bolder;
+        }
+
+        .side {
+            background-color: green;
+            color: white;
+            width: 18%;
+            height: 180px;
+            float: right;
+            border: 5px solid white;
+            border-top: 0px;
+            border-right: 0px;
+            padding-top: 140px;
+        }
+
+        .h1 {
+            background-color: red;
+        }
+
+        .h2 {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top"></div>
+    <div class="main">
+        <div class="text">HTML<br>Website<br>Layout</div>
+        <div class="head h1">Header</div>
+        <div class="nav">Navigation</div>
+        <div class="content">
+            <label style="position: relative; top: 195px;">Content</label>
+            <div class="side">Sidebar</div>
+        </div>
+        <div class="head h2">Footer</div>
+    </div>
+    <div class="top"></div>
+</body>
+
+</html>
