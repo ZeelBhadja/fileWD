@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 20 - Part B: iBuild Corporate Website Layout</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        /* Top Bar */
+        .top-subnav {
+            background-color: #111;
+            padding: 6px 40px;
+            font-size: 11px;
+            color: #777;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-nav {
+            background-color: #1f2229;
+            padding: 12px 40px;
+        }
+
+        .brand-logo-ibuild {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-link-custom {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 12px;
+            transition: color 0.2s;
+        }
+
+        .nav-link-custom:hover, .nav-link-custom.active {
+            color: #ffffff;
+        }
+
+        /* Blue Capabilities Hero Section */
+        .capabilities-hero {
+            background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .cap-title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .cap-icon {
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: #bae6fd;
+        }
+
+        .cap-item-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .cap-item-desc {
+            font-size: 12px;
+            color: #e0f2fe;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .more-btn-pill {
+            background: #ffffff;
+            color: #0369a1;
+            border: none;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Section Titles */
+        .section-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0 25px 0;
+        }
+
+        .section-heading-text {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        /* Project Cards */
+        .project-card {
+            border: none;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .project-img-box {
+            height: 150px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+
+        .project-card-footer {
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .project-card-footer h6 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        .project-card-footer p {
+            font-size: 10px;
+            color: #e0f2fe;
+            margin-bottom: 0;
+        }
+
+        /* Clients Bar */
+        .clients-strip {
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .clients-title {
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
+            opacity: 0.85;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            flex-wrap: wrap;
+        }
+
+        /* Dark Footer */
+        .footer-ibuild {
+            background-color: #111827;
+            color: #6b7280;
+            padding: 20px 40px;
+            font-size: 11px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-subnav">
+        <div>Scaffolding &bull; Base CSS &bull; Components &bull; JavaScript</div>
+        <div>Bootstrap Architecture Portal</div>
+    </div>
+
+    <nav class="main-nav d-flex justify-content-between align-items-center">
+        <a href="#" class="brand-logo-ibuild">
+            <i class="bi bi-layers-half text-info"></i> iBuild
+        </a>
+        <div class="d-flex gap-2">
+            <a href="#" class="nav-link-custom active"><i class="bi bi-house-door"></i> Home</a>
+            <a href="#" class="nav-link-custom">About Us</a>
+            <a href="#" class="nav-link-custom">Products</a>
+            <a href="#" class="nav-link-custom">Services</a>
+            <a href="#" class="nav-link-custom">Contacts</a>
+        </div>
+    </nav>
+
+    <section class="capabilities-hero">
+        <div class="container">
+            <div class="cap-title">Our Capabilities</div>
+            <div class="row g-4">
+                <div class="col-6 col-lg-3">
+                    <div class="cap-icon"><i class="bi bi-people-fill"></i></div>
+                    <div class="cap-item-title">PROJECT MANAGEMENT</div>
+                    <p class="cap-item-desc">Our team is highly skilled at successfully delivering projects.</p>
+                    <button class="more-btn-pill">More</button>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="cap-icon"><i class="bi bi-lightbulb-fill"></i></div>
+                    <div class="cap-item-title">INNOVATION &amp; DIVERSITY</div>
+                    <p class="cap-item-desc">Infrastructure projects are approached with creativity.</p>
+                    <button class="more-btn-pill">More</button>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="cap-icon"><i class="bi bi-award-fill"></i></div>
+                    <div class="cap-item-title">A PROFESSIONAL APPROACH</div>
+                    <p class="cap-item-desc">We maintain high safety standards across worksites.</p>
+                    <button class="more-btn-pill">More</button>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="cap-icon"><i class="bi bi-clock-history"></i></div>
+                    <div class="cap-item-title">A SUSTAINABLE FUTURE</div>
+                    <p class="cap-item-desc">We build durable and environmentally sound solutions.</p>
+                    <button class="more-btn-pill">More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="section-header-row">
+            <span class="text-muted"><i class="bi bi-chevron-left"></i></span>
+            <span class="section-heading-text">Recent Projects</span>
+            <span class="text-muted"><i class="bi bi-chevron-right"></i></span>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="project-card card">
+                    <div class="project-img-box" style="background: linear-gradient(135deg, #0284c7, #0ea5e9);">&#127754;</div>
+                    <div class="project-card-footer">
+                        <h6>Coastal Protection</h6>
+                        <p>Marine civil works and seawall constructions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="project-card card">
+                    <div class="project-img-box" style="background: linear-gradient(135deg, #059669, #10b981);">&#127793;</div>
+                    <div class="project-card-footer">
+                        <h6>Renewable Energy</h6>
+                        <p>Wind turbine foundations and grid hookups.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="project-card card">
+                    <div class="project-img-box" style="background: linear-gradient(135deg, #d97706, #f59e0b);">&#9968;</div>
+                    <div class="project-card-footer">
+                        <h6>Quarrying</h6>
+                        <p>Mineral excavation and rock blasting.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="project-card card">
+                    <div class="project-img-box" style="background: linear-gradient(135deg, #dc2626, #ef4444);">&#127959;</div>
+                    <div class="project-card-footer">
+                        <h6>Land Remediation</h6>
+                        <p>Soil revitalization and urban redevelopment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header-row">
+            <span class="text-muted"><i class="bi bi-chevron-left"></i></span>
+            <span class="section-heading-text">Latest News</span>
+            <span class="text-muted"><i class="bi bi-chevron-right"></i></span>
+        </div>
+
+        <div class="row g-4 text-start">
+            <div class="col-md-3">
+                <small class="text-muted d-block mb-1">18 April, 2026</small>
+                <h6 class="text-primary fw-bold">New Harbor Expansion Completed</h6>
+                <p class="text-muted small">Phase one delivery successfully handed over ahead of schedule.</p>
+            </div>
+            <div class="col-md-3">
+                <small class="text-muted d-block mb-1">14 April, 2026</small>
+                <h6 class="text-primary fw-bold">Zero Carbon Concrete Trial</h6>
+                <p class="text-muted small">Experimental polymer compound passes 60-day load testing.</p>
+            </div>
+            <div class="col-md-3">
+                <small class="text-muted d-block mb-1">10 April, 2026</small>
+                <h6 class="text-primary fw-bold">National Safety Excellence Award</h6>
+                <p class="text-muted small">iBuild safety director receives industry association honors.</p>
+            </div>
+            <div class="col-md-3">
+                <small class="text-muted d-block mb-1">02 April, 2026</small>
+                <h6 class="text-primary fw-bold">Annual Sustainability Audit</h6>
+                <p class="text-muted small">Detailed audit reveals 32% reduction in greenhouse footprints.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="clients-strip">
+        <div class="clients-title">Our Clients</div>
+        <div class="client-logos">
+            <span>U42</span>
+            <span>ellipsis</span>
+            <span>Dominic</span>
+            <span>Sequoia</span>
+        </div>
+    </section>
+
+    <footer class="footer-ibuild">
+        <div>&copy; 2026 iBuild Architecture &bull; All Rights Reserved</div>
+        <div>LinkedIn &bull; Facebook &bull; Twitter</div>
+    </footer>
+
+</body>
+</html>
