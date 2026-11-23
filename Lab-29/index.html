@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 29: Tailwind CSS Transitions and Animations</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* CSS keyframes for Exercise 8 Typing Effect */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #38bdf8; }
+        }
+        .typing-text {
+            overflow: hidden;
+            border-right: 3px solid #38bdf8;
+            white-space: nowrap;
+            letter-spacing: .05em;
+            animation: typing 3.5s steps(35, end) infinite, blink-caret .75s step-end infinite;
+        }
+
+        /* Ripple effect for Exercise 10 */
+        .ripple-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple-span {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-anim 600ms linear;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        @keyframes ripple-anim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased py-10 px-4">
+
+    <div class="max-w-5xl mx-auto space-y-12">
+        <!-- Header -->
+        <header class="text-center pb-8 border-b border-slate-800">
+            <span class="inline-block py-1 px-3 text-xs font-semibold tracking-wider text-emerald-400 bg-emerald-950/60 rounded-full uppercase mb-2">Tailwind Practical</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Transitions &amp; Animations (Lab 29)</h1>
+            <p class="mt-2 text-slate-400">Practicing hover scaling, fade-in text, image zoom, slide toggles, spinners, and typing simulations.</p>
+        </header>
+
+        <!-- 1. Button changes color & scales up on hover (A) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 1: Hover Color &amp; Scale</span>
+            <button class="px-8 py-3.5 bg-indigo-600 hover:bg-emerald-500 hover:scale-110 active:scale-95 text-white font-bold rounded-xl shadow-lg transition-all duration-300">
+                Hover to Scale &amp; Morph Color &rarr;
+            </button>
+        </section>
+
+        <!-- 2. Hidden text fade in when card is hovered (A) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 2: Card Hover Fade-In (.group-hover:opacity-100)</span>
+            <div class="group max-w-sm mx-auto bg-slate-900 p-8 rounded-2xl border border-slate-700 shadow-md cursor-pointer transition">
+                <div class="text-3xl mb-2">&#127881;</div>
+                <h4 class="font-bold text-white text-lg">Interactive Card Feature</h4>
+                <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm text-emerald-400 font-semibold mt-3">
+                    &check; Secret bonus text revealed smoothly via group-hover opacity transition!
+                </p>
+                <span class="text-xs text-slate-500 mt-2 block group-hover:hidden">(Hover over card to reveal)</span>
+            </div>
+        </section>
+
+        <!-- 3. Image zooms in slowly on hover (A) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 3: Slow Image Zoom (.hover:scale-125 duration-700)</span>
+            <div class="max-w-md mx-auto overflow-hidden rounded-2xl shadow-xl">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop&q=80" alt="Nature" class="w-full h-56 object-cover transition-transform duration-700 ease-out hover:scale-125 cursor-pointer">
+            </div>
+            <span class="text-xs text-slate-400 mt-2 block">Hover image for smooth slow optical zoom</span>
+        </section>
+
+        <!-- 4. Sliding Sidebar using button toggle (B) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center relative overflow-hidden">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 4: Sliding Sidebar Drawer</span>
+            <button onclick="toggleSidebar()" class="px-5 py-2.5 bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-lg text-sm shadow">
+                Toggle Slide Drawer
+            </button>
+
+            <!-- Slide-in Drawer -->
+            <div id="drawer" class="fixed top-0 left-0 h-full w-72 bg-slate-950 text-white p-6 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-lg font-bold text-sky-400">Sliding Panel</h3>
+                        <button onclick="toggleSidebar()" class="text-slate-400 hover:text-white text-xl font-bold">&times;</button>
+                    </div>
+                    <ul class="space-y-4 text-sm text-slate-300 text-left">
+                        <li class="p-2 bg-slate-900 rounded">&bull; Dashboard Analytics</li>
+                        <li class="p-2 bg-slate-900 rounded">&bull; Cloud Storage</li>
+                        <li class="p-2 bg-slate-900 rounded">&bull; Security &amp; Keys</li>
+                    </ul>
+                </div>
+                <button onclick="toggleSidebar()" class="w-full py-2 bg-rose-600 text-white text-xs font-bold rounded">Close Panel</button>
+            </div>
+        </section>
+
+        <!-- 5. Notification badge with pulsing glow (B) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 5: Pulsing Glow Notification Badge</span>
+            <div class="inline-flex items-center gap-3 bg-slate-900 px-6 py-3 rounded-full border border-slate-700">
+                <span class="relative flex h-4 w-4">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500"></span>
+                </span>
+                <span class="text-sm font-semibold text-slate-200">Server Operational &bull; Live Stream Active</span>
+            </div>
+        </section>
+
+        <!-- 6. CSS-only spinner using Tailwind (C) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 6: CSS-Only Spinner (.animate-spin)</span>
+            <div class="flex justify-center items-center gap-6">
+                <div class="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                <div class="w-10 h-10 border-4 border-emerald-400 border-t-transparent rounded-full animate-spin"></div>
+                <div class="w-10 h-10 border-4 border-rose-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        </section>
+
+        <!-- 7. Download arrow icon bouncing repeatedly (C) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 7: Bouncing Arrow (.animate-bounce)</span>
+            <div class="w-14 h-14 bg-indigo-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto shadow-lg animate-bounce">
+                &darr;
+            </div>
+            <span class="text-xs text-slate-400 mt-3 block">Download Ready</span>
+        </section>
+
+        <!-- 8. Simulated typing effect with blinking cursor (C) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 8: Typing Simulation</span>
+            <div class="max-w-md mx-auto bg-black p-4 rounded-xl border border-slate-700">
+                <div class="typing-text font-mono text-cyan-400 font-bold text-sm md:text-base">
+                    console.log("Welcome to Darshan University!");
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Section fading in when page loads (B) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center transition-all duration-1000 ease-out opacity-100 translate-y-0">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Exercise 9: Auto Load Fade-In Section</span>
+            <p class="text-sm text-slate-300">
+                This component mounts with an entrance transition blending opacity and subtle vertical displacement.
+            </p>
+        </section>
+
+        <!-- 10. Button with ripple animation when clicked (C) -->
+        <section class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4">Exercise 10: Click Ripple Animation</span>
+            <button onclick="createRipple(event)" class="ripple-btn px-8 py-3.5 bg-rose-600 text-white font-bold rounded-xl shadow-lg focus:outline-none">
+                Click for Dynamic Water Ripple
+            </button>
+        </section>
+    </div>
+
+    <script>
+        // Drawer toggle
+        function toggleSidebar() {
+            const drawer = document.getElementById('drawer');
+            drawer.classList.toggle('-translate-x-full');
+        }
+
+        // Ripple Effect
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement("span");
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            const rect = button.getBoundingClientRect();
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - rect.left - radius}px`;
+            circle.style.top = `${event.clientY - rect.top - radius}px`;
+            circle.classList.add("ripple-span");
+
+            const ripple = button.getElementsByClassName("ripple-span")[0];
+            if (ripple) {
+                ripple.remove();
+            }
+
+            button.appendChild(circle);
+        }
+    </script>
+</body>
+</html>
