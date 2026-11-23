@@ -39,30 +39,23 @@
             animation: typing 3.5s steps(35, end) infinite, blink-caret .75s step-end infinite;
         }
 
-        /* Ripple effect for Exercise 10 */
-        .ripple-btn {
-            position: relative;
-            overflow: hidden;
-        }
 
-        .ripple-span {
-            position: absolute;
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple-anim 600ms linear;
-            background-color: rgba(255, 255, 255, 0.6);
-        }
-
-        @keyframes ripple-anim {
-            to {
-                transform: scale(4);
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 
 <body class="bg-slate-900 text-slate-100 font-sans antialiased py-10 px-4">
+
 
     <div class="max-w-5xl mx-auto space-y-12">
         <!-- Header -->
@@ -242,13 +235,24 @@
         </section>
 
         <!-- 9. Section fading in when page loads (B) -->
-        <section
-            class="bg-slate-800/60 p-6 rounded-2xl border border-slate-800 text-center transition-all duration-1000 ease-out opacity-100 translate-y-0">
-            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Exercise 9: Auto Load
-                Fade-In Section</span>
-            <p class="text-sm text-slate-300">
-                This component mounts with an entrance transition blending opacity and subtle vertical displacement.
+
+        <section class="bg-slate-800 p-8 rounded-2xl text-center
+                    border border-slate-700 shadow-xl
+                    animate-[fadeIn_1.5s_ease-out_forwards]">
+
+            <h1 class="text-3xl font-bold text-cyan-400 mb-4">
+                Welcome to Darshan University!
+            </h1>
+
+            <p class="text-slate-300 mb-6">
+                Learn HTML, CSS and Tailwind CSS with practical examples.
             </p>
+
+            <button class="bg-rose-600 hover:bg-rose-700
+                       text-white px-6 py-3 rounded-lg">
+                Get Started
+            </button>
+
         </section>
 
         <!-- 10. Button with ripple animation when clicked (C) -->
